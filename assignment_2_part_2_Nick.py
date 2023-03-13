@@ -84,11 +84,12 @@ while True:
                 while True:
 
                     print("Enter quantity sold: ")
-                    quantity_sold = (input(""))
+                    quantity_sold = input("").strip()
 
                     if quantity_sold.isdigit():
+                        quantity_sold_int = int(quantity_sold)
                         price = PRICE_LIBRARY.get(category_number)[1]
-                        product_price = float(price) * int(quantity_sold)
+                        product_price = price * quantity_sold_int
                         total_price += product_price
                         break
 
